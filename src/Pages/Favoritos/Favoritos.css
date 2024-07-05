@@ -1,0 +1,79 @@
+.meusFilmes {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+ul {
+  background-color: rgb(92, 91, 90);
+  color: rgb(207, 207, 207);
+  font-weight: 700;
+  width: 60%;
+  padding: 1rem;
+  border-radius: 4rem;
+
+  li {
+    text-decoration: none;
+    list-style: none;
+    margin: 1rem;
+    border-bottom: 1px solid #8f8e8e63;
+
+    .conteudoFavoritos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .linkFavoritos {
+        text-decoration: none;
+        font-size: 12.5px;
+        color: #fff;
+        font-weight: 700;
+        background-color: red;
+        padding: 0.4rem 0.7rem;
+        transition: 0.5s;
+        box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 5);
+      }
+
+      .linkFavoritos:hover {
+        background-color: #ffffff;
+        color: #c76464;
+        font-weight: bold;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 393px) {
+  .meusFilmes {
+    ul {
+      width: 100%;
+      border-radius: 15px;
+      li {
+        .conteudoFavoritos {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .buttonsFavoritos {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0.5rem 0rem;
+
+          .buttonExluir {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 400px;
+          }
+        }
+      }
+    }
+  }
+}
