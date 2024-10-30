@@ -12,7 +12,8 @@ import "glider-js/glider.min.css";
 function Home() {
   const [filmes, setFIlmes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [slider, setSlider] = useState(5);
+  const [slider, setSlider] = useState(4);
+  const [preViwerDots, setDots] = useState(false);
 
   const gliderRef = useRef(null);
   //BASE DA URL: https://api.themoviedb.org/3/
@@ -56,8 +57,10 @@ function Home() {
     const checarMedia = () => {
       if (window.innerWidth < 600) {
         setSlider(1);
+        setDots(true);
       } else {
-        setSlider(5);
+        setSlider(4);
+        setDots(false);
       }
     };
     checarMedia();
@@ -97,12 +100,13 @@ function Home() {
             </div>
           ))}
         </div>
-        <button className="glider-next" style={{ display: "none" }}>
-          »
-        </button>
-        <div>
-          <div className="dots"></div>
-        </div>
+        <button className="glider-next">»</button>
+        {preViwerDots &
+        (
+          <div className="dotsDiv">
+            <div className="dots"></div>
+          </div>
+        )}
       </div>
     </div>
   );
